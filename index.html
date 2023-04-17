@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ticket Booking</title>
+		<link rel="stylesheet" href="./css/stylesheet.css" />
+		<link href="https://github.com/ChaseCares/general/blob/main/img/main-logo-crop.png?raw=true" rel="icon" type="image/x-icon" />
+	</head>
+	<body>
+		<h1>Online Ticket Booking Service</h1>
+		<div>
+			<form>
+				<label for="search">Search</label>
+				<input type="text" id="search" name="search" value="Taylor swift" />
+				<button type="submit">Search</button>
+			</form>
+		</div>
+		<h3>Results</h3>
+		<div id="event-info"></div>
+	</body>
+	<script>
+		const form = document.querySelector("form");
+		form.addEventListener("submit", async (event) => {
+			event.preventDefault();
+			const search = document.querySelector("#search").value;
+			if (search.toLowerCase() === "taylor swift") {
+				const eventInfo = document.querySelector("#event-info");
+				eventInfo.innerHTML = `
+                        <h2>Taylor Swift at Madison Square Garden</h2>
+                        <p>Taylor Swift at Madison Square Garden</p>
+                        <p>Date: 12/12/2023</p>
+                        <p>Location: New York City</p>
+                        <p>Price: $100.00</p>
+                        <button onclick="window.location.href='./book.html';">Buy Tickets</button>
+                    `;
+			} else {
+				alert("Event not found");
+			}
+		});
+	</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ticket Booking</title>
+		<link rel="stylesheet" href="./css/stylesheet.css" />
+		<link href="https://github.com/ChaseCares/general/blob/main/img/main-logo-crop.png?raw=true" rel="icon" type="image/x-icon" />
+	</head>
+	<body>
+		<h1>Book Tickets</h1>
+		<form action="./thank_you.html">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" /><br /><br />
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" /><br /><br />
+			<label for="event">Seating:</label>
+			<select id="event" name="event">
+				<option value="concert">General</option>
+				<option value="theater">Premium</option>
+				<option value="sport">VIP</option></select
+			><br /><br />
+			<label for="quantity">Quantity:</label>
+			<input type="number" id="quantity" name="quantity" min="1" onchange="calculatePrice()" /><br /><br />
+			<label for="price">Price: <span id="price">100.00</span></label
+			><br />
+
+			<label for="tax">Tax: <span id="tax">7.5</span>%</label><br />
+			<label for="total_price">Total price: <span id="total_price"></span></label>
+			<br />
+			<input type="submit" value="Book Now" />
+		</form>
+	</body>
+	<script>
+		function calculatePrice() {
+			const price_span = document.querySelector("#price");
+			const quantity_span = document.querySelector("#quantity");
+			const total_price_span = document.querySelector("#total_price");
+			const price = parseFloat(price_span.innerText);
+			const quantity = parseInt(quantity_span.value);
+			const total_price = price * quantity * 1.075;
+			total_price_span.innerText = "$" + total_price.toFixed(2);
+		}
+	</script>
+</html>
