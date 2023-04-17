@@ -13,7 +13,7 @@
 		<div>
 			<form>
 				<label for="search">Search</label>
-				<input type="text" id="search" name="search" value="Taylor swift" />
+				<input type="text" id="search" name="search" value="Taylor Swift" />
 				<button type="submit">Search</button>
 			</form>
 		</div>
@@ -29,14 +29,14 @@
 				const eventInfo = document.querySelector("#event-info");
 				eventInfo.innerHTML = `
                         <h2>Taylor Swift at Madison Square Garden</h2>
-                        <p>Taylor Swift at Madison Square Garden</p>
+                        <p>Taylor Swift</p>
                         <p>Date: 12/12/2023</p>
                         <p>Location: New York City</p>
                         <p>Price: $100.00</p>
                         <button onclick="window.location.href='./book.html';">Buy Tickets</button>
                     `;
 			} else {
-				alert("Event not found");
+				alert("Event not found, only implemented 'Taylor Swift'");
 			}
 		});
 	</script>
