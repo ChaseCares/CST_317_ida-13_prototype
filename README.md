@@ -2,7 +2,7 @@
 
 This prototype was created for CST-317 in-depth assignment 13.
 
-[View here](https://github.com/TODO)
+[View here](https://chasecares.github.io/cst-317_ida-13_prototype/)
 
 ## Search Page
 
